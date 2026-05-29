@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1a3a5c;
+  --primary-light: #2563eb;
+  --accent: #f59e0b;
+  --surface: #f8fafc;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --success: #10b981;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.4s ease forwards; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--primary-light);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-light);
+  border: 1.5px solid var(--primary-light);
+  border-radius: 10px;
+  padding: 9px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--primary-light);
+  color: white;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: white;
+  color: var(--text);
+  width: 100%;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
